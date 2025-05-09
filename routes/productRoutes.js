@@ -1,6 +1,7 @@
 import express from "express";
 import { createProduct ,getAllProducts,placeOrder,getAllOrders,getProductSummary ,signup ,login ,addSameProduct ,completeSifting ,searchOrderedProduct ,searchProductById ,
-    getSiftingProducts,getSiftedProducts ,getSingleItems ,getGroupItems} from "../controllers/ProductsControllers.js";
+    getSiftingProducts,getSiftedProducts ,getSingleItems ,getGroupItems,
+    health} from "../controllers/ProductsControllers.js";
 import { verifyToken } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
@@ -28,5 +29,7 @@ router.get("/SiftedProducts", verifyToken, getSiftedProducts);
 
 router.get("/getOnlySingleItems", verifyToken, getSingleItems);
 router.get("/getOnlyGroupItems", verifyToken, getGroupItems);
+
+router.get("/gethealth", verifyToken, health);
 
 export default router;

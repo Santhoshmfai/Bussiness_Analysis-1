@@ -694,3 +694,9 @@ export const getGroupItems = async (req, res) => {
     res.status(500).json({ message: "Server Error", error: error.message });
   }
 };
+export const health = async (req, res) => {
+    res.json({
+      message: "API is running",
+      dbStatus: mongoose.connection.readyState === 1 ? "Connected" : "Not Connected"
+    });
+  };
