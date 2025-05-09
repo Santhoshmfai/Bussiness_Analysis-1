@@ -2,7 +2,9 @@ import express from "express";
 import productRoutes from "./routes/productRoutes.js";
 import { setupSwagger, connectDB } from './config/db.js';
 import dotenv from 'dotenv';
+import cors from 'cors';
 
+app.use(cors());
 dotenv.config();
 
 const app = express();
