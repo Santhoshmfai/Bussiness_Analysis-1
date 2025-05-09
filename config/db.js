@@ -35,7 +35,7 @@ const swaggerDocument = YAML.load(path.join(__dirname, '../utils/swagger.yaml'))
 export const setupSwagger = (app) => {
      swaggerDocument.servers = [
         {
-            url: "https://bussiness-analysis.onrender.com",
+            url: "https://bussiness-analysis.onrender.com/api",
             description: "Production server"
         }
     ];
