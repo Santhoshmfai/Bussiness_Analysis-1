@@ -4,10 +4,11 @@ import YAML from 'yamljs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
-
+import cors from 'cors'; 
 // Configure environment variables
 dotenv.config();
 
+app.use(cors());
 // Get directory name in ES module
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
