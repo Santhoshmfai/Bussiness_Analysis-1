@@ -4,8 +4,10 @@ info:
   description: API for managing products, orders, and user authentication
   version: 1.0.0
 servers:
-  - url: http://localhost:5000/api
-    description: Development server
+  - url: https://bussiness-analysis.onrender.com
+    description: Production server
+  - url: http://localhost:5000
+    description: Local development server
 tags:
   - name: Authentication
     description: User signup and login

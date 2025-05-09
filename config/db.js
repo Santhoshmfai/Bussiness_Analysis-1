@@ -33,6 +33,12 @@ export const connectDB = async () => {
 const swaggerDocument = YAML.load(path.join(__dirname, '../utils/swagger.yaml'));
 
 export const setupSwagger = (app) => {
+     swaggerDocument.servers = [
+        {
+            url: "https://bussiness-analysis.onrender.com",
+            description: "Production server"
+        }
+    ];
     app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     app.get('/api-docs.json', (req, res) => {
         res.json(swaggerDocument);
