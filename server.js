@@ -4,14 +4,14 @@ import { setupSwagger, connectDB } from './config/db.js';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-app.use(cors());
+
 dotenv.config();
 
 const app = express();
 
 // Middleware
 app.use(express.json());
-
+app.use(cors());
 // Setup Swagger
 setupSwagger(app);
 
