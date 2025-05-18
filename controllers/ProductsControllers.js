@@ -31,7 +31,7 @@ export const signup = async (req, res) => {
 
       res.status(201).json({ message: "User registered successfully!", token });
   } catch (error) {
-      console.error("Signup Error:", error);
+      console.error("Signup error:", error);
       res.status(500).json({ error: "Internal server error" });
   }
 };
